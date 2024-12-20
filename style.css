@@ -1,0 +1,509 @@
+:root {
+  --text-color: #eaeaea;
+  --secondary-color: #020202;
+  --background-color: #111111;
+  --highlight-color: #fcaf17;
+  --lightgray-color: #757575;
+  --darkgray-color: #1e1e1e;
+  --gta6-blue-color: #24cee1;
+  --gta6-pink-color: #ed49ad;
+  --logo-size: 33px;
+  --font-size: 25px;
+  --font-size-lil: 15px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: var(--font-size);
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--text-color);
+  text-shadow: 0px 0px 1px rgba(100, 100, 100, 0.312), 0px 0px 1px #3333333a;
+}
+li {
+  list-style-type: none;
+}
+body {
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* HEADER */
+/* ----------------------------------------------------------- */
+header {
+  background-color: var(--secondary-color);
+  opacity: 0.95;
+  padding: 20px 80px;
+  transition: padding 0.3s ease;
+
+  min-height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.Rockstar_logo {
+  height: 33px;
+  width: 33px;
+  object-fit: cover;
+  margin: 1px;
+}
+
+.Rockstar_logo:hover {
+  height: 35px;
+  width: 35px;
+  margin: 0;
+  cursor: pointer;
+  transition: filter 0.2s;
+  filter: drop-shadow(5px 5px 5px var(--gta6-pink-color))
+    drop-shadow(-5px -5px 5px var(--gta6-blue-color))
+    drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.248));
+}
+
+/* NAV */
+
+header > nav > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 700px;
+  height: 50px;
+}
+
+header > nav li {
+  padding: 24px 0px;
+  width: 100px;
+  border-bottom: 5px solid transparent;
+
+  text-align: center;
+}
+
+header > nav a {
+  padding: 29px 0px;
+  color: var(--text-color);
+
+  font-size: var(--font-size-lil);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+header li img {
+  height: 20px;
+  width: 20px;
+}
+
+header > nav > ul > li:first-child > a > img {
+  padding-top: 13px;
+  object-fit: cover;
+}
+
+header > nav li:hover {
+  color: var(--buttom-color);
+  border-bottom: 5px solid var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+/* ICONOS DE LA DERECHA */
+header > div {
+  display: flex;
+  gap: 30px;
+}
+
+header button {
+  background-color: var(--highlight-color);
+  color: var(--secondary-color);
+  border-radius: 8px;
+  font-size: var(--font-size-lil);
+  font-weight: 700;
+  text-transform: uppercase;
+  height: 40px;
+  width: 140px;
+  border: none;
+  cursor: pointer;
+}
+
+header button:hover {
+  filter: brightness(0.8);
+  transition: filter 0.5s ease;
+}
+
+header > div > a img {
+  height: 33px;
+  width: 33px;
+  object-fit: cover;
+}
+
+header > div img:hover {
+  filter: brightness(0.7);
+  transition: filter 0.5s ease;
+}
+
+/* HEADER PARA PANTALLA MOVIL/TABLET */
+
+#menu_icon {
+  display: none;
+  height: 50px;
+  width: 40px;
+}
+@media (max-width: 1200px) {
+  #menu_icon{
+    display: block;
+  }
+  header {
+    padding: 20px 30px;
+    justify-content: space-between;
+    align-items: center;
+    transition: padding 0.3s ease;
+  }
+
+  header > div a {
+    justify-self: end;
+  }
+
+  header > nav,
+  header button,
+  header > div a:nth-child(2) {
+    display: none;
+  }
+
+  #menu_icon:hover {
+    filter: drop-shadow(0px 0px 3px #ffffff);
+    cursor: pointer;
+  }
+}
+/* ----------------------------------------------------------- */
+/* MAIN */
+/* ----------------------------------------------------------- */
+
+/* --------BANNER-------- */
+main > #banner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#banner > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 50px;
+
+  background-color: var(--secondary-color);
+
+  border-top: 0.5px solid var(--darkgray-color);
+
+  flex-grow: 1;
+}
+.gta6_img {
+  min-width: 100px;
+  width: 900px;
+  object-fit: cover;
+  flex-grow: 1;
+}
+
+#banner h2,
+#banner p {
+  font-weight: bold;
+}
+#banner h2 {
+  font-size: var(--font-size-lil);
+}
+
+#banner p {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#banner button {
+  margin-bottom: 5vw;
+  border: 2px solid var(--text-color);
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  width: 80%;
+  height: 50px;
+  font-size: 60%;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#banner button:hover {
+  color: var(--secondary-color);
+  background-color: var(--highlight-color);
+  border-color: var(--highlight-color);
+  transition: 0.3s ease;
+}
+
+/* -------NEWSWIRE--------- */
+
+#newswire {
+  display: flex;
+  flex-direction: column;
+  padding: 5vw;
+  margin-top: 30px;
+}
+#newswire article {
+  display: flex;
+  flex-direction: column;
+}
+
+#newswire article > h3,
+#newswire article > p {
+  padding: 20px;
+}
+
+#newswire img {
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+
+#newswire h2 {
+  margin-bottom: 20px;
+}
+
+#newswire h3 > time {
+  color: var(--lightgray-color);
+  margin-left: 13px;
+}
+
+#newswire h3,
+#newswire time {
+  font-size: var(--font-size-lil);
+}
+
+#newswire ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+#newswire li {
+  border: 1px solid rgba(71, 71, 71, 0.71);
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 400px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.view_more_btn {
+  align-self: center;
+  margin: 50px 0;
+  width: 130px;
+  font-size: calc(var(--font-size) + -5px);
+  font-weight: 100;
+  border: none;
+  border-bottom: 3px solid var(--highlight-color);
+  border-radius: 3px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+.view_more_btn:hover {
+  color: var(--background-color);
+  background-color: var(--highlight-color);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* -----GAMES----- */
+
+#games {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+#games > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#games > h2 {
+  align-self: flex-start;
+  margin: 10px;
+}
+
+#games > ul > li {
+  display: flex;
+  flex-grow: 1;
+  width: 50%;
+}
+
+#games > ul > li > a {
+  display: flex;
+  padding: 10px;
+}
+
+#games img {
+  transition: scale 0.5s ease;
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+#games > ul > li:first-child {
+  min-width: 100%;
+}
+
+#games img:hover {
+  scale: 1.05;
+}
+
+@media (min-width: 1200px) {
+  #games ul > li {
+    max-width: 25%;
+  }
+}
+
+/* ------SUBSCRIBE------- */
+
+#subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  height: 600px;
+  background-image: url(./assets/rockstar_background.png);
+  background-size: contain;
+}
+
+#subscribe::before {
+  content: url(./assets/rockstar_logo_white.png);
+}
+#subscribe > h2 {
+  font-size: var(--font-size);
+  margin: 0px 30px;
+  max-width: 500px;
+  opacity: 1;
+}
+
+#subscribe > p {
+  font-size: var(--font-size-lil);
+  font-weight: 400;
+  color: var(--lightgray-color);
+  margin: 0px 30px;
+  max-width: 500px;
+}
+
+#subscribe > button {
+  background-color: rgba(255, 255, 255, 0);
+  font-size: calc(var(--font-size-lil) + 3px);
+  padding: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-color);
+  border: var(--text-color) 1px solid;
+  border-radius: 8px;
+  margin: 30px;
+  width: 200px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#subscribe > button:hover {
+  background-color: rgba(255, 255, 255, 0.115);
+  transition: background-color 0.5s ease;
+}
+
+/* ----------------------------- */
+
+/* -------FOOTER------- */
+
+footer * {
+  font-size: var(--font-size-lil);
+}
+
+#sup {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+#sup ul {
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#sup a {
+  font-size: 20px;
+}
+
+.lang_btn {
+  background-color: var(--background-color);
+  border: transparent;
+  min-width: 150px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.lang_btn img {
+  width: 20px;
+  object-fit: contain;
+}
+
+.lang_btn {
+  background-color: var(--background-color);
+}
+
+#mid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+
+#mid > nav:first-child li {
+  margin: 20px 0;
+}
+
+#mid > nav:first-child a {
+  color: var(--lightgray-color);
+}
+
+#social_media > ul {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+#social_media img {
+  width: 20px;
+  margin: 20px;
+  object-fit: contain;
+}
+
+#social_media li:hover {
+  border-radius: 50%;
+  background-color: rgba(100, 100, 100, 0.397);
+  transition: background-color 0.5s ease;
+}
+
+#inf {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 40px;
+}
+
+#inf > p:nth-child(2) {
+  word-spacing: 20px;
+}
+
+footer:not(#social_media) a:hover {
+  color: var(--highlight-color);
+}
