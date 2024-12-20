@@ -265,6 +265,7 @@ main > #banner {
 #newswire img {
   border-radius: 10px 10px 0 0;
   object-fit: cover;
+  width: 100%;
 }
 
 #newswire h2 {
